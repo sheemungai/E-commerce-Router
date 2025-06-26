@@ -18,32 +18,27 @@ export default function Header() {
           </Link>
 
           <Link
-            to="/users"
+            to="/about"
             className=" hover:text-blue-400 font-medium transition-colors"
           >
-            Users
+          About
           </Link>
 
           <Link
-            to="/categories"
+            to="/contacts"
             className=" hover:text-blue-400 font-medium transition-colors"
           >
-            Categories
+            Contacts
           </Link>
 
-          <Link
-            to="/products"
+           <Link
+            to="/dashboard"
             className=" hover:text-blue-400 font-medium transition-colors"
           >
-            Products
+            Dashboard
           </Link>
 
-          <Link
-            to="/orders"
-            className=" hover:text-blue-400 font-medium transition-colors"
-          >
-            Orders
-          </Link>
+          
         </nav>
       </div>
     </header>

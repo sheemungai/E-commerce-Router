@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Home from '@/components/Home'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -6,8 +7,6 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <div className="text-center">
-      
-    </div>
+    <Home/>
   )
 }
