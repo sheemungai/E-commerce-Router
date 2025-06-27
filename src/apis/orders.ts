@@ -1,5 +1,5 @@
 import { url } from "@/constants/url";
-import  type{ Torders } from "@/Types/allTypes";
+import  type{ TOrders } from "@/Types/allTypes";
 
 //get all orders
 export const getAllOrders = async () => {
@@ -16,7 +16,7 @@ export const getOrdersById =  async (id: number) =>{
 }
 
 //create order
-export const createOrder = async (Orders: Torders) =>{
+export const createOrder = async (Orders: TOrders) =>{
     const response = await fetch (`${url}/orders`,{
         method:'CREATE',
         headers: {"Content-Type":"application.json"},
@@ -26,7 +26,7 @@ export const createOrder = async (Orders: Torders) =>{
 }
 
 //patch an order
-export const patchOrder = async (Orders:Torders, id:number) =>{
+export const patchOrder = async (Orders:TOrders, id:number) =>{
     const response = await fetch (`${url}/orders/${id}`,{
         method:'PATCH',
         headers: {"Content-Type":"application.json"},

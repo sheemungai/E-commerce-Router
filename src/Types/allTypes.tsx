@@ -4,6 +4,7 @@ export interface TProducts{
  product_id: number;
  name: string;
  description: string;
+ price: number
  img: string;
  stock_quantity: number;
  created_at?: Date;

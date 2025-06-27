@@ -1,5 +1,8 @@
 import { getAllUsers, getUserById, createUser, patchUser, deleteUser } from "@/apis/users";
-import { useQuery, useQueryClient, useMutation, QueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient, useMutation, QueryClient } 
+from "@tanstack/react-query";
+import type { UseMutationResult, UseQueryResult } from '@tanstack/react-query'
+import type { TUser } from "@/Types/allTypes";
 
 //get all user hooks
 export const useUserState = () => {
@@ -30,17 +33,17 @@ export const useCreateUserState = () => {
   })
 }
 
-//patch user hook
-// export const usePatchUserState = () => {
-//   const QueryClient = useQueryClient()
-//   return useMutation({
-//     mutationKey: ['patchUser'],
-//     mutationFn: patchUser,
-//     onSuccess: () => {
-//       QueryClient.invalidateQueries({ queryKey: ['users'], exact: true })
-//     },
-//   })
-// }
+type patchUser = {id:number, User: TUser}
+export const usePatchUserState = ():UseMutationResult<TUser,Error,patchUser> => {
+  const QueryClient = useQueryClient()
+  return useMutation({
+    mutationKey: ['patchUser'],
+    mutationFn:({id, User}:patchUser) => patchUser( id,User),
+    onSuccess: () => {
+      QueryClient.invalidateQueries({ queryKey: ['users'], exact: true })
+    },
+  })
+}
 
 //delete user hook
 export const useDeleteUserState = () => {

@@ -15,7 +15,7 @@ import {
 } from '@tanstack/react-query'
 
 //get all products
-export const useProductState = () => {
+export const useProductState = ():UseQueryResult<TProducts[], Error> => {
   return useQuery({
     queryKey: ['products'],
     queryFn: getAllProducts,
